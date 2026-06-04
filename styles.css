@@ -1,0 +1,307 @@
+/* Cub Scout Recruiting — shared styles
+   Static-site friendly: no external dependencies, served as-is from R2. */
+
+:root {
+  --scout-blue: #003f87;      /* BSA blue */
+  --scout-blue-dark: #002b5c;
+  --scout-gold: #ce1126;      /* accent red */
+  --scout-yellow: #fdb71c;    /* BSA gold */
+  --ink: #1c1f23;
+  --muted: #5b6470;
+  --paper: #ffffff;
+  --bg: #f4f6f9;
+  --border: #e2e6ec;
+  --radius: 10px;
+  --maxw: 860px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+a { color: var(--scout-blue); }
+a:hover { color: var(--scout-blue-dark); }
+
+/* ---- Header / hero ---- */
+.site-header {
+  background: var(--scout-blue);
+  color: #fff;
+  border-bottom: 5px solid var(--scout-yellow);
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: stretch;
+  min-height: 320px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem clamp(1.25rem, 4vw, 3rem);
+}
+
+.hero h1 {
+  margin: 0 0 .5rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.01em;
+}
+
+.hero .tagline {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #dce6f5;
+  max-width: 60ch;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* anchor crop to top so faces stay in frame */
+  display: block;
+}
+
+/* Stack hero on narrow screens: image on top, text below */
+@media (max-width: 760px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .site-header .hero { order: 2; }
+  .site-header .hero-image {
+    order: 1;
+    height: auto;
+    max-height: 280px;
+  }
+}
+
+/* ---- Layout ---- */
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* Two-column layout: left nav sidebar + content */
+.layout {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.layout main { max-width: none; margin: 0; padding: 0; }
+
+.sidebar { position: sticky; top: 1rem; }
+
+.nav-group { margin-bottom: 1.75rem; }
+
+.nav-group h2 {
+  font-size: .95rem;
+  color: var(--scout-blue-dark);
+  border-bottom: 2px solid var(--scout-yellow);
+  padding-bottom: .3rem;
+  margin: 0 0 .4rem;
+}
+
+.nav-group .objective {
+  font-size: .82rem;
+  margin: 0 0 .6rem;
+}
+
+.side-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .45rem;
+}
+
+.side-nav a {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--scout-yellow);
+  border-radius: 8px;
+  padding: .55rem .7rem;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: .9rem;
+  line-height: 1.3;
+  transition: border-color .15s, box-shadow .15s, transform .05s;
+}
+
+.side-nav a:hover {
+  border-left-color: var(--scout-blue);
+  box-shadow: 0 2px 8px rgba(0, 63, 135, 0.08);
+  transform: translateY(-1px);
+}
+
+.side-nav .when {
+  display: block;
+  color: var(--scout-blue);
+  font-weight: 700;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  margin-bottom: .1rem;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .sidebar { position: static; }
+}
+
+section { margin-bottom: 2.5rem; }
+
+.intro p { font-size: 1.05rem; }
+
+h2 {
+  color: var(--scout-blue-dark);
+  border-bottom: 2px solid var(--scout-yellow);
+  padding-bottom: .35rem;
+  margin-top: 2rem;
+}
+
+.objective {
+  font-style: italic;
+  color: var(--muted);
+  margin: .25rem 0 1rem;
+}
+
+/* ---- Playbook link cards ---- */
+.playbook-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .75rem;
+}
+
+.playbook-list a {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--scout-yellow);
+  border-radius: var(--radius);
+  padding: .9rem 1.1rem;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  transition: border-color .15s, transform .05s, box-shadow .15s;
+}
+
+.playbook-list a:hover {
+  border-left-color: var(--scout-blue);
+  box-shadow: 0 2px 10px rgba(0, 63, 135, 0.08);
+  transform: translateY(-1px);
+}
+
+.playbook-list .when {
+  display: inline-block;
+  min-width: 7.5rem;
+  color: var(--scout-blue);
+  font-weight: 700;
+}
+
+/* ---- Breadcrumb / back link on subpages ---- */
+.breadcrumb {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1rem 1.25rem 0;
+  font-size: .9rem;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--paper);
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+.site-footer .inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+/* ---- Article / playbook content ---- */
+.article h3 {
+  color: var(--scout-blue);
+  margin-top: 1.75rem;
+  margin-bottom: .4rem;
+}
+
+.article h4 {
+  color: var(--scout-blue-dark);
+  font-size: 1.05rem;
+  margin-top: 1.25rem;
+  margin-bottom: .3rem;
+}
+
+.article ul { padding-left: 1.25rem; }
+.article li { margin-bottom: .4rem; }
+
+/* Highlighted callout / pull box */
+.callout {
+  background: #eef3fb;
+  border: 1px solid #d4e0f2;
+  border-left: 5px solid var(--scout-blue);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  font-weight: 600;
+  color: var(--scout-blue-dark);
+}
+
+.callout .lead { display: block; font-weight: 700; margin-bottom: .25rem; }
+
+/* Comparison table (old way vs new way) */
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: .95rem;
+}
+
+.compare th, .compare td {
+  border: 1px solid var(--border);
+  padding: .65rem .85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare thead th {
+  background: var(--scout-blue);
+  color: #fff;
+}
+
+.compare tbody tr:nth-child(even) td { background: #f8fafc; }
+
+.compare td.new { color: var(--scout-blue-dark); font-weight: 600; }
+
+/* ---- Subpage placeholder ---- */
+.placeholder {
+  background: var(--paper);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  color: var(--muted);
+}

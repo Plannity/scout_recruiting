@@ -1,0 +1,8 @@
+# OS cruft
+.DS_Store
+
+# Large source images / working assets (not used directly by the site).
+# Web-ready hero images are committed as .jpeg files.
+*.jpg
+*.JPG
+*.pptx
