@@ -21,7 +21,7 @@
           '<li><a href="' + base + 'events/community-campfire.html"><span class="when">Aug / Sep</span> Community Campfire</a></li>' +
           '<li><a href="' + base + 'events/pinewood-derby.html"><span class="when">January</span> Pinewood Derby</a></li>' +
           '<li><a href="' + base + 'events/spring-open-house.html"><span class="when">Apr / May</span> Spring Open House</a></li>' +
-          '<li><a href="' + base + 'events/summer-fun.html"><span class="when">Jun / Jul</span> Summer Fun</a></li>' +
+          '<li><a href="' + base + 'events/summer-fun.html"><span class="when">Jun / Jul</span> Summer Parade</a></li>' +
         '</ul>' +
       '</div>' +
       '<div class="nav-group">' +
