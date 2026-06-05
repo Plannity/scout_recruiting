@@ -1,0 +1,17 @@
+# Cloudflare Pages headers. https://developers.cloudflare.com/pages/configuration/headers/
+
+# Basic security headers on every response.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+
+# Long-lived cache for images (content is stable; replace the file to bust).
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Shared assets: cache for a day, revalidate after.
+/styles.css
+  Cache-Control: public, max-age=86400
+/nav.js
+  Cache-Control: public, max-age=86400
