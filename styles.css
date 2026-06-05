@@ -297,6 +297,41 @@ h2 {
 
 .compare td.new { color: var(--scout-blue-dark); font-weight: 600; }
 
+/* Activities reference table */
+.activity-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: .92rem;
+}
+
+.activity-table th,
+.activity-table td {
+  border: 1px solid var(--border);
+  padding: .55rem .7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.activity-table thead th {
+  background: var(--scout-blue);
+  color: #fff;
+}
+
+.activity-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--scout-blue-dark);
+  width: 22%;
+}
+
+.activity-table tr.cat th {
+  background: var(--scout-yellow);
+  color: var(--scout-blue-dark);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
 /* ---- Subpage placeholder ---- */
 .placeholder {
   background: var(--paper);
