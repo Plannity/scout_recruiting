@@ -39,15 +39,24 @@
 
   function inject() {
     var target = document.getElementById('site-nav');
-    if (!target) return;
-    target.innerHTML = html;
-    // Mark the link for the current page so it can be highlighted.
-    var herePath = normalize(location.pathname);
-    var anchors = target.getElementsByTagName('a');
-    for (var i = 0; i < anchors.length; i++) {
-      if (normalize(new URL(anchors[i].href).pathname) === herePath) {
-        anchors[i].setAttribute('aria-current', 'page');
+    if (target) {
+      target.innerHTML = html;
+      // Mark the link for the current page so it can be highlighted.
+      var herePath = normalize(location.pathname);
+      var anchors = target.getElementsByTagName('a');
+      for (var i = 0; i < anchors.length; i++) {
+        if (normalize(new URL(anchors[i].href).pathname) === herePath) {
+          anchors[i].setAttribute('aria-current', 'page');
+        }
       }
+    }
+
+    // Footer text, with an always-current year. Single source for every page.
+    var footer = document.getElementById('site-footer-text');
+    if (footer) {
+      var year = new Date().getFullYear();
+      footer.textContent = year +
+        ' Northeast Illinois Council · Recruiting playbooks · Built for Scout leaders';
     }
   }
 

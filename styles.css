@@ -246,6 +246,7 @@ h2 {
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 1.25rem;
+  text-align: center;
 }
 
 /* ---- Article / playbook content ---- */
