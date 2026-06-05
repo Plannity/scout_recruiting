@@ -159,6 +159,13 @@ main {
   margin-bottom: .1rem;
 }
 
+/* Current page in the shared nav */
+.side-nav a[aria-current="page"] {
+  border-left-color: var(--scout-blue);
+  background: #eef3fb;
+  color: var(--scout-blue-dark);
+}
+
 @media (max-width: 760px) {
   .layout {
     grid-template-columns: 1fr;
