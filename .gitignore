@@ -1,6 +1,9 @@
 # OS cruft
 .DS_Store
 
+# Playwright MCP browser-session logs
+.playwright-mcp/
+
 # Large source images / working assets (not used directly by the site).
 # Web-ready hero images are committed as .jpeg files.
 *.jpg
