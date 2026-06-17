@@ -129,7 +129,9 @@ main {
 }
 
 .side-nav a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: .65rem;
   background: var(--paper);
   border: 1px solid var(--border);
   border-left: 4px solid var(--scout-yellow);
@@ -142,6 +144,17 @@ main {
   line-height: 1.3;
   transition: border-color .15s, box-shadow .15s, transform .05s;
 }
+
+.side-nav .nav-icon {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  color: var(--scout-blue);
+}
+
+.side-nav .nav-text { min-width: 0; }
+
+.side-nav a[aria-current="page"] .nav-icon { color: var(--scout-blue-dark); }
 
 .side-nav a:hover {
   border-left-color: var(--scout-blue);
