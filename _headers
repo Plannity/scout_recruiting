@@ -10,8 +10,8 @@
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Shared assets: cache for a day, revalidate after.
+# Shared assets: short 1-minute cache so JS/CSS changes go live quickly.
 /styles.css
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=60, must-revalidate
 /nav.js
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=60, must-revalidate
