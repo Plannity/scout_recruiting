@@ -16,12 +16,12 @@
       '</div>' +
       '<div class="nav-group">' +
         '<h2>Single Pack Events</h2>' +
-        '<p class="objective">Recruit kids grades K&ndash;5 to join your pack.</p>' +
+        '<p class="objective">Template events you can use for year-round recruiting for your pack.</p>' +
         '<ul class="side-nav">' +
-          '<li><a href="' + base + 'events/community-campfire.html"><span class="when">Aug / Sep</span> Community Campfire</a></li>' +
-          '<li><a href="' + base + 'events/pinewood-derby.html"><span class="when">January</span> Pinewood Derby</a></li>' +
-          '<li><a href="' + base + 'events/spring-open-house.html"><span class="when">Apr / May</span> Spring Open House</a></li>' +
-          '<li><a href="' + base + 'events/summer-fun.html"><span class="when">Jun / Jul</span> Summer Parade</a></li>' +
+          '<li><a href="' + base + 'events/community-campfire.html"><span class="when">Fall</span> Community Campfire</a></li>' +
+          '<li><a href="' + base + 'events/pinewood-derby.html"><span class="when">Winter</span> Pinewood Derby</a></li>' +
+          '<li><a href="' + base + 'events/spring-open-house.html"><span class="when">Spring</span> Spring Open House</a></li>' +
+          '<li><a href="' + base + 'events/summer-fun.html"><span class="when">Summer</span> Summer Parade</a></li>' +
         '</ul>' +
       '</div>' +
       '<div class="nav-group">' +
